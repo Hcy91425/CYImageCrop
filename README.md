@@ -20,17 +20,17 @@
 在终端输入 `pod install` 或者 `pod update`
 
 # Usage
-```
+```objc
 #import "UIImageView+CYCrop.h"
 ```
 在需要显示裁剪框时
 
-```
+```objc
 [self.imageView cy_showCropViewWithType:CYCropScaleTypeCustom];
 ```
 目前提供了一下集中裁剪框的类型：
 
-```
+```objc
 typedef NS_ENUM(NSInteger, CYCropScaleType) {
     CYCropScaleTypeCustom,		// 自定义
     CYCropScaleTypeOriginal,	// 原始比例
@@ -46,13 +46,13 @@ typedef NS_ENUM(NSInteger, CYCropScaleType) {
 
 当你不需要裁剪框时，你可以直接隐藏它：
 
-```
+```objc
 [self.imageView cy_hideCropView];
 ```
 
 我还提供了其他的一些接口来更精细的控制裁剪框视图
 
-```
+```objc
 /** 裁剪视图,通过这个属性你可以设置更多裁剪框的细节 */
 @property (nonatomic, strong, readonly)CYCropView *cy_cropView;
 
@@ -72,7 +72,7 @@ typedef NS_ENUM(NSInteger, CYCropScaleType) {
 
 `UIImageView` 的 `cy_cropView` 属性是一个 `CYCropView` 类型的视图，通过它，你可以更进一步的定制裁剪框，目前有这额外的几个属性可以设置: 
 
-```
+```objc
 /** 裁剪框边框粗细 */
 @property (nonatomic, assign)CGFloat borderWidth;
 /** 遮罩层颜色 */
@@ -82,7 +82,7 @@ typedef NS_ENUM(NSInteger, CYCropScaleType) {
 ```
 你也可以自己实例化一个 CYCropView，并把它添加到你自己的视图上而不仅仅是 UIImageView，当然，你需要自己管理这个 cropView 的生命周期。
 
-```
+```objc
 CYCropView *cropView = [[CYCropView alloc] initWithFrame:customView.bounds]];
 [customView addSubview: cropView];
 ```
